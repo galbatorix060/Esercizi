@@ -169,3 +169,33 @@ print(f"il numero di citta e': {NumeroPaesi}")
 
 
 
+#3-10. Every Function: Think of things you could store in a list. For example, you could make a list of mountains, rivers, countries, cities, languages, or anything else you’d like. Write a program that creates a list containing these items and then uses each function introduced in this chapter at least once.
+
+
+
+print("ESERCIZIO 3.10")
+GamesList: list = ["Fallout4", "Rainbow", "Bannerloard", "Squad", "Arma3", "Horizon", "GTA5"]
+print("Ordine alfabetico: ", sorted(GamesList))
+print("Nuovo gioco!")
+GamesList.append("RDR2")
+print(GamesList)
+print("Nuovo gioco nella lista!")
+GamesList.insert(4, "Boarderlands4")
+print(GamesList)
+print("un gioco e' stato rimosso!")
+GamesList.pop(7)
+print("Giochi in varie forme:")
+for gioco in GamesList:
+    print(str.lower(gioco))
+    print(str.upper(gioco))
+    print(str.title(gioco))
+print("lunghezza lista:", len(GamesList))
+GamesList.reverse()
+print(f"Ordine invertito metodo reverse: {GamesList}")
+GamesList.reverse()
+print(f"Ordine originale metodo reverse: {GamesList}")
+GamesList.sort()
+print(f"Lista con metodo sort in ordine alfabetico {GamesList}")
+GamesList.sort(reverse=True)
+print(f"Lista in ordine alfabetico invertito: {GamesList}")
+
