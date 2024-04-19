@@ -198,4 +198,3 @@ GamesList.sort()
 print(f"Lista con metodo sort in ordine alfabetico {GamesList}")
 GamesList.sort(reverse=True)
 print(f"Lista in ordine alfabetico invertito: {GamesList}")
-
