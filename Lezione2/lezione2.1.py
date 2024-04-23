@@ -89,7 +89,7 @@ print("ESERCIZIO 6-10\n\n\n")
 
 Numeri: dict = {"Valerio" : [1,2,3], "leonardo" : [4,5,6], "Daneile" : [7,8,9], "Edoardo" : [23,54,67], "Emanuele" : [21,12,34]}
 for persona, numero in Numeri.items():
-    print(f"{persona} ha come numeri fortunati: {numero}")
+    print(f"{persona} ha come numeri fortunati: {numero}\n\n\n")
 
 
 #6-11. Cities: Make a dictionary called cities. Use the names of three cities as keys in your dictionary. Create a dictionary of information about each city and include the country that the city is in, its approximate population, and one fact about that city. The keys for each city’s dictionary should be something like country, population, and fact. Print the name of each city and all of the information you have stored about it.
@@ -100,11 +100,28 @@ print("ESERCIZIO 6-11\n\n\n")
 
 
 
-roma: dict = {"county" : "italy", "population" : "3.8M", "quote" : "The best art in the world"}
-milano: dict = {"county" : "italy", "population" : "2.7M", "quote" : "the best style in the world"}
-berlino: dict = {"county" : "germany", "population" : "4M", "quote" : "the best public transport in the world"}
+roma: dict = {"city" : "roma", "country" : "italy", "population" : "3.8M", "quote" : "The best art in the world"}
+milano: dict = {"city" : "milano", "country" : "italy", "population" : "2.7M", "quote" : "the best style in the world"}
+berlino: dict = {"city" : "berlino", "country" : "germany", "population" : "4M", "quote" : "the best public transport in the world"}
 cities: list = [milano,roma,berlino]
 
-for ss in cities:
-    for k,v in ss.items():
-        print(ss,k,v,"\n")
+for citta in cities:
+    for country,population in citta.items():
+        print(country, ':', population)
+print("\n\n\n")
+
+
+#6-12. Extensions: We’re now working with examples that are complex enough that they can be extended in any number of ways. Use one of the example programs from this chapter, and extend it by adding new keys and values, changing the context of the program, or improving the formatting of the output.
+
+
+
+print("ESERCIZIO 6-12\n\n\n")
+
+
+Sophie: dict = {"persona" : "Sophie","lista" : ["cane","gatto","topo"], "viaggio" : "Giappone", "auto" : "mercedes", "cibo" : "pizza fritta", "animale" : "cucciolo di bassotto", "regalo" : "birkin"}
+Leonardo: dict = {"persona" : "Leonardo","lista" : ["albero", "mela", "arancia"], "viaggio" : "America", "auto" : "ferrari", "cibo" : "lasagna", "animale" : "gatto", "regalo" : "macchina"}
+persone: list = [Sophie,Leonardo]
+
+for persona in persone:
+    for chiave,ogetto in persona.items():
+        print(f"{chiave} : {ogetto}")
