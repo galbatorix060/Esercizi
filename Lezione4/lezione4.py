@@ -98,13 +98,62 @@ print("\n\n\n")
 
 print("ESERCIZIO 8-7")
 
-def make_album(name, album) -> dict:
-    
+def make_album(name : str, album : str) -> dict:
+    Music_Album : dict = {"artist" : name, "name_album" : album}
+    return Music_Album
+a: dict = make_album("paky", "rozzi")
+b: dict = make_album("gemitaiz", "qvc9")
+c: dict = make_album("kety", "dolcevita")
+print(a,"\n", b, "\n", c)
+
+def make_album1(name : str, album : str, nsong : int = None) -> dict:
+    Music_Album : dict = {"artist" : name, "name_album" : album, "number_songs" : nsong}
+    return Music_Album
+d: dict = make_album1("Achille", "ragazzi madre", 12)
+e: dict = make_album1("rove", "ciao")
+print(d,"\n", e, "\n\n\n")
+
+
+#8-8. User Albums: Start with your program from Exercise 8-7. Write a while loop that allows users to enter an album’s artist and title. Once you have that information, call make_album() with the user’s input and print the dictionary that’s created. Be sure to include a quit value in the while loop.
+
+
 print("ESERCIZIO 8-8")
+"""
+user : dict = {}
+i = 1
+while i < 100:
+    i += 1
+    user = make_album1(name=input("inserisci nome artista: "), album=input("inserisci nome album: "), nsong=input("inserisci numero canzoni: "))
+    print("Shif + C to exit or Enter to continue")
+    if input() == "C":
+        break
+print(user,"\n\n\n")"""
+
+
+#8-9. Messages: Make a list containing a series of short text messages. Pass the list to a function called show_messages(), which prints each text message.
+
+
 
 print("ESERCIZIO 8-9")
 
+messages: list = ["ciao", "come stai", "tutto bene?", "oggi bel tempo"]
+messages1: list = ["eccolo", "ollalero", "viva la lazio"]
+def show_messages(l) -> str:
+    for i in l:
+        print(i)
+
+show_messages(messages)
+show_messages(messages1)
+print("\n\n\n")
+
+
+#8-10. Sending Messages: Start with a copy of your program from Exercise 8-9. Write a function called send_messages() that prints each text message and moves each message to a new list called sent_messages as it’s printed. After calling the function, print both of your lists to make sure the messages were moved correctly.
+
+
+
 print("ESERCIZIO 8-10")
+
+def send_messages()
 
 print("ESERCIZIO 8-11")
 
