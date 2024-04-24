@@ -190,7 +190,7 @@ print("ESERCIZIO 8-17")
 
 
 #funzione per implementare il bubble sort
-
+"""
 def bubble_sort(l) -> list:
     for i in range(len(l)):
         for j in range(len(l) - 1):
@@ -207,7 +207,7 @@ def bubble_sort_reverse(l) -> list:
                 temp: int = l[j]
                 l[j] = l[j +1]
                 l[j + 1] = temp
-    return l
+    return l"""
 
 """
 lista: list = [3,7,1,56,32,98,12,54]
@@ -220,3 +220,12 @@ for i in range(1, 10001):
     listalunga.append(i)
 
 print(bubble_sort_reverse(listalunga))"""
+
+def bubble_sort_upgrade(l) -> list:
+    for i in range(len(l)):
+        for j in range(len(l) - i - 1):
+            if l[j] > l[j+1]:
+                temp: int = l[j]
+                l[j] = l[j +1]
+                l[j + 1] = temp
+    return l
