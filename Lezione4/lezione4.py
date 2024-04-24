@@ -187,3 +187,36 @@ print("ESERCIZIO 8-15")
 print("ESERCIZIO 8-16")
 
 print("ESERCIZIO 8-17")
+
+
+#funzione per implementare il bubble sort
+
+def bubble_sort(l) -> list:
+    for i in range(len(l)):
+        for j in range(len(l) - 1):
+            if l[j] > l[j+1]:
+                temp: int = l[j]
+                l[j] = l[j +1]
+                l[j + 1] = temp
+    return l
+
+def bubble_sort_reverse(l) -> list:
+    for i in range(len(l)):
+        for j in range(len(l) - 1):
+            if l[j] < l[j+1]:
+                temp: int = l[j]
+                l[j] = l[j +1]
+                l[j + 1] = temp
+    return l
+
+"""
+lista: list = [3,7,1,56,32,98,12,54]
+print(bubble_sort(lista))
+print(bubble_sort_reverse(lista))
+
+
+listalunga: list = []
+for i in range(1, 10001):
+    listalunga.append(i)
+
+print(bubble_sort_reverse(listalunga))"""
