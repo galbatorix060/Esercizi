@@ -138,6 +138,7 @@ print("ESERCIZIO 8-9")
 
 messages: list = ["ciao", "come stai", "tutto bene?", "oggi bel tempo"]
 messages1: list = ["eccolo", "ollalero", "viva la lazio"]
+
 def show_messages(l) -> str:
     for i in l:
         print(i)
@@ -155,7 +156,7 @@ print("ESERCIZIO 8-10")
 
 def send_messages(message) -> str:
     sent_messages: list = []
-    show_messages(messages)
+    show_messages(message)
     for i in message:
         sent_messages.append(i)
     for i in sent_messages:
@@ -174,11 +175,51 @@ print("ESERCIZIO 8-11")
 
 a = send_messages(messages1)
 print(a, "\n", messages1)
+print("\n\n\n")
 
 
+
+#8-12. Panini: scrivi una funzione che accetta un elenco di elementi che una persona desidera in un panino. La funzione dovrebbe avere un parametro che raccolga tanti elementi quanti ne fornisce la chiamata alla funzione e dovrebbe stampare un riepilogo del panino ordinato. Chiama la funzione tre volte, utilizzando ogni volta un numero diverso di argomenti.
+
+
+"""
 print("ESERCIZIO 8-12")
 
+def your_burger(n) -> list:
+    ingridients: list = []
+    i: int = 1
+    while i <= n:
+        i += 1
+        f = input("inserire l'ingrediente: ")
+        ingridients.append(f)
+    print("il suo panino e': ", ingridients)
+    return ingridients
+
+your_burger(2)
+your_burger(4)
+your_burger(1)"""
+
+
+
+#8-13. Profilo utente:  crea un tuo profilo chiamando build_profile(), utilizzando il tuo nome e cognome e altre tre coppie chiave-valore che ti descrivono. Tutti i valori devono essere passati alla funzione come parametri. La funzione quindi deve restituire una stringa del tipo "Eric Crow, età 45, capelli castani, peso 67"
+
+
+"""
 print("ESERCIZIO 8-13")
+
+profile: dict = {"nome" : "", "cognome" : "", "eta" : "", "colore_capelli" : "", "peso" : ""}
+
+def build_profile(dizionario) -> dict:
+    for k, v in dizionario.items():
+        v = input(f"{k} = ")
+        dizionario[k] = v
+    return dizionario
+
+print(build_profile(profile))"""
+
+
+
+
 
 print("ESERCIZIO 8-14")
 
