@@ -218,12 +218,36 @@ def build_profile(dizionario) -> dict:
 print(build_profile(profile))"""
 
 
-
+#8-14. Auto: scrivi una funzione che memorizza le informazioni su un'auto in un dizionario. La funzione deve sempre ricevere un produttore e un nome modello. Dovrebbe quindi accettare un numero arbitrario di argomenti di parole chiave. Chiama la funzione con le informazioni richieste e altre due coppie di nome-valore, come un colore o una caratteristica opzionale. La funzione dovrebbe funzionare per una chiamata come questa: auto - make-car('subaru', 'outback', color'''blue', tow-package-True) Stampare il dizionario che è stato restituito per assicurarsi che tutte le informazioni siano memorizzate correttamente. 
 
 
 print("ESERCIZIO 8-14")
 
+def make_car(n=int(input("inserire il numero di argomenti: "))) -> dict:
+    auto: dict = {"produttore" : "", "modello" : ""}
+    auto["produttore"] = input("inserire produttore: ")
+    auto["modello"] = input("inserire il modello: ")
+    i: int = 1
+    while i <= n:
+        for k, v in auto.copy().items():
+            i += 1
+            k = input("inserire chiave: ")
+            v = input("inserire valore: ")
+            auto[k] = v
+    return auto
+    
+
+
+
+
+#8-15. Modelli di stampa: mettere le funzioni per l'esempio printing-models.py in un file separato chiamato printing-functions.py. Scrivi una dichiarazione di importazione nella parte superiore di printing-models.py e modifica il file per utilizzare le funzioni importate.
+
+
+
 print("ESERCIZIO 8-15")
+
+
+
 
 print("ESERCIZIO 8-16")
 
