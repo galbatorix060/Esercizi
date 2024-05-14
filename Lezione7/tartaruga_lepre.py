@@ -1,4 +1,5 @@
 import random
+import time
 
 lunghezza_lista = 70
 percorso: list = ['-'] * lunghezza_lista
@@ -43,6 +44,9 @@ while True:
     movimento_h = mossa_h(tartaruga,abilita_h)
     tartaruga = movimento_t
     lepre = movimento_h
+
+    time.sleep (0.5)
+
     if lepre >= 70 - 1:
         print("HARE WINS || YUCH!!!")
         break
