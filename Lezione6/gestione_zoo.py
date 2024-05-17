@@ -1,8 +1,51 @@
+#Leonardo Marianella
 class Zoo:
-    def __init__(self, fences, zoo_keepers) -> None:     
-        self.fences : list = fences
-        self.zoo_keepers : list = zoo_keepers
+    def __init__(self) -> None:     
+        self.fences : list = []
+        self.zoo_keepers : list = []
 
+    def add_fence(self, fence) -> None:
+        
+        self.fences.append(fence)
+    
+    def add_zookeeper(self, zookeeper) -> None:
+        
+        self.zoo_keepers.append(zookeeper)
+
+
+    def clean(self):
+        total_cleaning_time = 0.0
+        for fence in self.fences:
+
+            if fence.animal:
+                
+                cleaning_time = fence.areafence / (fence.areafence - (fence.areafence - sum(animal.height * animal.width for animal in fence.animal)))
+                total_cleaning_time += cleaning_time
+
+            else:
+                
+                cleaning_time = fence.areafence
+                total_cleaning_time += cleaning_time
+        
+        return total_cleaning_time
+    
+    def describe_zoo(self) -> str:
+
+        print("Guardiani: ")
+
+        for Zookeeper in self.zoo_keepers:
+            print(f"Guardiano (nome={Zookeeper.name}, cognome={Zookeeper.surname}, id={Zookeeper.id})")
+
+        print("\nRecinti: ")
+
+        for fence in self.fences:
+            
+            print(f"Recinto(area={fence.area}, temperatura={fence.temperature}, habitat={fence.habitat})")
+            print("Con all'interno: ")
+            
+            for animal in fence.animal:
+                print(f"Animali(nome={animal.name}, specie={animal.species}, età={animal.age})")
+        
 class Animal:
     def __init__(self, name, species, age, height, width, preferred_habitat) -> None:
         self.name : str = name
@@ -23,7 +66,7 @@ class Fence:
     def animal_area(self):
         animalarea = 0
         for animal in self.animal:
-            animalarea += Animal.height * Animal.width
+            animalarea += animal.height * animal.width
         return animalarea
     
     def add_animal(self, animal):
@@ -49,5 +92,4 @@ class ZooKeeper:
                 animal.health += 1
                 animal.width *= 1.02
                 animal.height *= 1.02
-    
-    def clean(self):
+
