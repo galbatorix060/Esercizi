@@ -39,7 +39,7 @@ def mossa_t(tartaruga,abilita_t, stamina_tartaruga):
         tartaruga -= 1
     tartaruga = ostacoli_aggiuntivi(tartaruga, 'ostacoli')
     tartaruga = ostacoli_aggiuntivi(tartaruga, 'bonus')
-    return tartaruga, stamina_tartaruga
+    return tartaruga
 
 def mossa_h(lepre,abilita_h, stamina_lepre):
     if abilita_h >= 1 and abilita_h <= 2:
@@ -63,7 +63,7 @@ def mossa_h(lepre,abilita_h, stamina_lepre):
         lepre -= 2
     lepre = ostacoli_aggiuntivi(lepre, 'ostacoli')
     lepre = ostacoli_aggiuntivi(lepre, 'bonus')
-    return lepre, stamina_lepre
+    return lepre
 
 movimento_t = 0
 movimento_h = 0
