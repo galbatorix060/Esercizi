@@ -9,11 +9,10 @@ class MovieCatalog():
             self.catalogo[director_name] = movies
     
     def remove_movie(self, director_name, movie_name):
-        for k, v in self.catalogo.items():
-            if director_name == k:
-                for i in v:
-                    if i == movie_name:
-                        v.remove(movie_name)
+        self.catalogo[director_name].remove(movie_name)
+        if len(self.catalogo[director_name]) == 0:
+            self.catalogo.pop(director_name)
+
     
     def list_directors(self):
         for k, v in self.catalogo.items():
