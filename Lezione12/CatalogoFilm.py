@@ -6,12 +6,16 @@ class MovieCatalog():
         if director_name not in self.catalogo:
             self.catalogo[director_name] = movies
         else:
-            self.catalogo[director_name] = movies
+            for movie in movies:
+                if movie not in self.catalogo[director_name]:
+                    self.catalogo[director_name].append(movie)
+        return {director_name : self.catalogo[director_name]}
     
     def remove_movie(self, director_name, movie_name):
-        self.catalogo[director_name].remove(movie_name)
-        if len(self.catalogo[director_name]) == 0:
-            self.catalogo.pop(director_name)
+        if director_name in self.catalogo and movie_name in self.catalogo[director_name]:
+            self.catalogo[director_name].remove(movie_name)
+            if len(self.catalogo[director_name]) == 0:
+                self.catalogo.pop(director_name)
 
     
     def list_directors(self):
