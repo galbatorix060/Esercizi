@@ -16,7 +16,7 @@ class Film:
         return self.__title
     
     def isEqual(self, otherFilm):
-        if self.__id == otherFilm.id:
+        if self.__id == otherFilm.__id:
             return True
         else:
             return False

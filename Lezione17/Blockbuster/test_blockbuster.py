@@ -15,5 +15,36 @@ class TestFilm(unittest.TestCase):
         self.film7 = Commedia(8, "il dittatore")
         self.film8 = Commedia(9, "sausage party")
         self.film9 = Drama(10, "oppenheimer")
-        lista_film = [self.film, self.film1, self.film2, self.film3, self.film4, self.film5, self.film6, self.film7, self.film8, self.film9]
-        noleggio = Noleggio(lista_film)
+        self.lista_film = [self.film, self.film1, self.film2, self.film4, self.film5, self.film6, self.film7, self.film8, self.film9]
+        self.noleggio = Noleggio(self.lista_film)
+    
+    def test_isAvaible(self):
+        self.assertEqual(self.noleggio.isAvaible(self.film), True)
+        self.assertEqual(self.noleggio.isAvaible(self.film3), False)
+    
+    def test_rentAMovie(self):
+        self.noleggio.rentAMovie(self.film, 1)
+        self.assertEqual(self.noleggio.isAvaible(self.film), False)
+        self.noleggio.printRentMovies()
+
+    def test_rentAMovieNotAvaible(self):
+        self.noleggio.rentAMovie(self.film6, 2)
+        self.noleggio.rentAMovie(self.film6, 3)
+    
+    def test_giveBack(self):
+        self.noleggio.rentAMovie(self.film5, 4)
+        self.noleggio.giveBack(self.film5, 4, 5)
+        self.noleggio.printMovies()
+        self.noleggio.printRentMovies(4)
+    
+    def test_calcolaPenaleRitardo(self):
+        self.film.calcolaPenaleRitardo(2)
+        self.film8.calcolaPenaleRitardo(2)
+        self.film9.calcolaPenaleRitardo(2)
+    
+    def test_printRentMovies(self):
+        self.noleggio.rentAMovie(self.film8, 10)
+        self.noleggio.printRentMovies(10)
+
+if __name__ == "__main__":
+    unittest.main()

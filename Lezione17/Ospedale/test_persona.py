@@ -36,10 +36,10 @@ class TestDottore(unittest.TestCase):
         self.dottore = Dottore("Mario", "Rossi", "cardiologo", 15.9)
     
     def test_inizialization(self):
-        self.assertEqual(self.dottore.getName, "Mario")
-        self.assertEqual(self.dottore.getLastName, "Rossi")
-        self.assertEqual(self.dottore.getSpecializazion, "Cardiologo")
-        self.assertEqual(self.dottore.getParcel, 15.9)
+        self.assertEqual(self.dottore.getName(), "Mario")
+        self.assertEqual(self.dottore.getLastName(), "Rossi")
+        self.assertEqual(self.dottore.getSpecializazion(), "Cardiologo")
+        self.assertEqual(self.dottore.getParcel(), 15.9)
     
     def test_isAValidDoctor(self):
         self.dottore.setAge(34)
@@ -53,8 +53,8 @@ class TestPaziente(unittest.TestCase):
     
     def test_inizialization(self):
         self.assertEqual(self.paziente.getName(), "Valerio")
-        self.assertEqual(self.paziente.getLastName, "Gamba")
-        self.assertEqual(self.paziente.getIdCode, "123Valery")
+        self.assertEqual(self.paziente.getLastName(), "Gamba")
+        self.assertEqual(self.paziente.getIdCode(), "123Valery")
 
 class TestFattura(unittest.TestCase):
     def setUp(self) -> None:
