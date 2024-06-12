@@ -19,17 +19,18 @@ class TestFilm(unittest.TestCase):
         self.noleggio = Noleggio(self.lista_film)
     
     def test_isAvaible(self):
-        self.assertEqual(self.noleggio.isAvaible(self.film), True)
-        self.assertEqual(self.noleggio.isAvaible(self.film3), False)
+        self.assertTrue(self.noleggio.isAvaible(self.film))
+        self.assertTrue(self.noleggio.isAvaible(self.film3))
     
     def test_rentAMovie(self):
         self.noleggio.rentAMovie(self.film, 1)
-        self.assertEqual(self.noleggio.isAvaible(self.film), False)
+        self.assertFalse(self.noleggio.isAvaible(self.film))
         self.noleggio.printRentMovies()
 
     def test_rentAMovieNotAvaible(self):
         self.noleggio.rentAMovie(self.film6, 2)
         self.noleggio.rentAMovie(self.film6, 3)
+        self.assertNotIn(self.film6, self.noleggio.rented_film[3])
     
     def test_giveBack(self):
         self.noleggio.rentAMovie(self.film5, 4)

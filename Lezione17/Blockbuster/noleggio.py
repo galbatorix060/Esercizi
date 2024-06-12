@@ -18,7 +18,7 @@ class Noleggio:
     
     def rentAMovie(self, film, clientID):
         for i in self.film_list:
-            if film.__id in i.__id:
+            if film.__id in self.film_list:
                 self.film_list.remove(i)
                 self.rented_film_list.append(i)
                 self.rented_film[clientID] = self.rented_film_list
@@ -37,6 +37,6 @@ class Noleggio:
             print(f"{i.__title} - {i.genre}")
     
     def printRentMovies(self, clientID):
-        for k, v in self.rented_film:
+        for k, v in self.rented_film.items():
             if k == clientID:
                 print(f"{clientID} ha noleggiato: {v}")
