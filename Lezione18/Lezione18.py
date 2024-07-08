@@ -47,5 +47,5 @@ with open("Lezione18/file_per_eesercitarsi.txt") as file:
     file.close()
     try:
         read_data = file.read()
-    except:
+    except ValueError:
         print("Failed reading")
