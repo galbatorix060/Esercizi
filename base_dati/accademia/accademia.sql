@@ -5,7 +5,7 @@ create type CausaAssenza as enum('Chiusura Universitaria', 'Maternità', 'Malatt
 create domain PosInteger as integer check (value >= 0);
 create domain StringaM as varchar(100);
 create domain NumeroOre as integer check (value > 0 and value < 8);
-create domain Denaro as float check (value >= 0)
+create domain Denaro as float check (value >= 0);
 
 create table Persona (
     id PosInteger not null,
