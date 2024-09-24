@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Feedback</title>
+</head>
+<style>
+    body{
+        background-color: bisque;
+        border: 5px;
+        border-style: solid;
+        border-color: black;
+        padding: 10%;
+    }
+    h1{
+        text-align: center;
+        font-style: italic;
+    }
+    label{
+        text-align: center;
+        font-style: oblique;
+    }
+</style>
+<body>
+    <h1>Form Feedback</h1>
+    <hr style="color: black;">
+    <form>
+        <label for="name">Nome:</label>
+        <input type="text" id="name" name="name" required><br><br>
+        <label for="name">Cognome:</label>
+        <input type="text" id="surname" name="surname" required><br><br>
+      
+        <label for="email">Indirizzo Email:</label>
+        <input type="email" id="email" name="email"><br><br>
+      
+        <label for="subject">Oggetto:</label>
+        <input type="text" id="subject" name="subject"><br><br>
+      
+        <label for="language">Linguaggio di Programmazione Preferito:</label>
+        <select id="language" name="language">
+          <option value="Java">Java</option>
+          <option value="Javascript">Javascript</option>
+          <option value="C#">C#</option>
+          <option value="Python">Python</option>
+          <option value="Go">Go</option>
+        </select><br><br>
+      
+        <label for="sex">Sesso:</label>
+        <input type="radio" id="male" name="sex" value="male"> Maschio
+        <input type="radio" id="female" name="sex" value="female"> Femmina<br><br>
+      
+        <label for="age">Età:</label>
+        <input type="date" id="dateOfBirth" name="dateOfBirth"><br><br>
+      
+        <label for="description">Descrizione:</label>
+        <textarea id="description" name="description"></textarea><br><br>
+      
+        <input type="checkbox" id="privacy" name="privacy">
+        <label for="privacy">Accetto la <a href="privacy-policy.html" target="_blank">Privacy Policy</a></label><br><br>
+      
+        <input type="submit" value="Invia">
+        <input type="reset" value="Reset">
+      </form>
+</body>
+</html>
