@@ -71,3 +71,71 @@ JOIN ArrPart A ON V.codice = A.codice AND V.comp = A.comp
 JOIN Compagnia C ON V.comp = C.nome
 WHERE A.partenza = 'FCO' AND A.arrivo = 'JFK' AND C.annoFondaz IS NOT NULL;
 
+--1. Quante sono le compagnie che operano (sia in arrivo che in partenza) nei diversi aeroporti?
+
+select a.codice, a.nome, count(distinct comp)
+from aeroporto a, ArrPart ap
+where ap.partenza = a.codice or ap.arrivo = a.codice
+group by a.codice, a.nome;
+
+--2. Quanti sono i voli che partono dall’aeroporto ‘HTR’ e hanno una durata di almeno 100 minuti?
+
+select count(*) as numeroVoli
+from volo v, ArrPart ap
+where v.codice = ap.codice and ap.partenza =  'HTR' and v.durataMinuti >= 100;
+
+--3. Quanti sono gli aeroporti sui quali opera la compagnia ‘Apitalia’, per ogni nazione
+--nella quale opera?
+
+select la.nazione, count(distinct aeroporto)
+from LuogoAeroporto la, ArrPart ap
+where (ap.partenza = la.aeroporto or ap.arrivo = la.aeroporto) and ap.comp = 'Apitalia'
+group by la.nazione;
+
+--4. Qual è la media, il massimo e il minimo della durata dei voli effettuati dalla
+--compagnia ‘MagicFly’ ?
+
+select  round(avg(durataMinuti),2) as media, max(durataMinuti) as max, min(durataMinuti) as min
+from volo v
+where comp = 'MagicFly';
+
+--5. Qual è l’anno di fondazione della compagnia più vecchia che opera in ognuno degli
+--aeroporti?
+
+select  a.codice, a.nome, min(c.annoFondaz)
+from aeroporto a, compagnia c, ArrPart ap
+where (a.codice = ap.arrivo or a.codice = ap.partenza) and ap.comp = c.nome
+group by a.codice, a.nome;
+
+--6. Quante sono le nazioni (diverse) raggiungibili da ogni nazione tramite uno o più
+--voli?
+
+select lp.nazione, count(distinct la.nazione)
+from ArrPart ap, LuogoAeroporto lp, LuogoAeroporto la
+where ap.partenza = lp.aeroporto and ap.arrivo = la.aeroporto
+group by lp.nazione;
+
+--7. Qual è la durata media dei voli che partono da ognuno degli aeroporti?
+
+
+
+--8. Qual è la durata complessiva dei voli operati da ognuna delle compagnie fondate
+--a partire dal 1950?
+
+
+
+--9. Quali sono gli aeroporti nei quali operano esattamente due compagnie?
+
+
+
+--10. Quali sono le città con almeno due aeroporti?
+
+
+
+--11. Qual è il nome delle compagnie i cui voli hanno una durata media maggiore di 6
+--ore?
+
+
+
+--12. Qual è il nome delle compagnie i cui voli hanno tutti una durata maggiore di 100
+--minuti?
